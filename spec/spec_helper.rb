@@ -1,6 +1,8 @@
 require 'common_spec_helper'
 require 'webmock/rspec'
 WebMock.disable_net_connect!(allow_localhost: true)
+# Enable ruby deprecations for keywords, it's suppressed by default in Ruby 2.7.2
+Warning[:deprecated] = true
 
 module Helpers
   def success_double(body = { id: 123 })
